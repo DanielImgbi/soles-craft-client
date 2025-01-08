@@ -23,25 +23,25 @@ export const testimonies = [
     name: "Dakolo Oweipa",
     testimony:
       "Soles Craft specializes in creating high-quality, stylish, and comfortable shoes for both men and women. With a focus on timeless designs and premium materials,",
-    image: "/IMG-20241220-WA0015.jpg",
+    image: "/IMG-20241220-WA0016.jpg",
   },
   {
     name: "Dakolo Oweipa",
     testimony:
       "Soles Craft specializes in creating high-quality, stylish, and comfortable shoes for both men and women. With a focus on timeless designs and premium materials,",
-    image: "/IMG-20241220-WA0015.jpg",
+    image: "/IMG-20241220-WA0017.jpg",
   },
   {
     name: "Dakolo Oweipa",
     testimony:
       "Soles Craft specializes in creating high-quality, stylish, and comfortable shoes for both men and women. With a focus on timeless designs and premium materials,",
-    image: "/IMG-20241220-WA0015.jpg",
+    image: "/IMG-20241220-WA0019.jpg",
   },
   {
     name: "Dakolo Oweipa",
     testimony:
       "Soles Craft specializes in creating high-quality, stylish, and comfortable shoes for both men and women. With a focus on timeless designs and premium materials,",
-    image: "/IMG-20241220-WA0015.jpg",
+    image: "/IMG-20241220-WA0020.jpg",
   },
 ];
 

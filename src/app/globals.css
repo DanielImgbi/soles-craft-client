@@ -2,30 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: mandatory;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  overflow-x: hidden !important;
+}
+body::-webkit-scrollbar {
+  width: 7px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+body::-webkit-scrollbar-track-piece {
+  background-color: #333;
 }
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
-
-@layer base {
-  :root {
-    --radius: 0.5rem;
-  }
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(161, 130, 25);
+  border-radius: 20%;
 }
 
 .gradient {
@@ -53,12 +51,54 @@
   margin-bottom: 30px;
 }
 
+.parallax {
+  overflow: hidden;
+  margin: 0;
+  white-space: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.parallax .scroller {
+  display: flex;
+  white-space: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.parallax span {
+  display: block;
+  margin-right: 1rem;
+}
+
+.pinterest-grid {
+  /* display: grid; */
+  /* grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
+  column-gap: 0;
+  padding: 0; */
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 3;
+}
+
+.pinterest-grid-item {
+  position: relative;
+  /* width: 100%; */
+  border-radius: 15px;
+  overflow: hidden;
+  background: #f0f0f0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  break-inside: avoid;
+}
+
 @media (max-width: 800px) {
   .my-masonry-grid {
     margin-left: -15px; /* gutter size offset */
   }
   .my-masonry-grid_column {
-    /* padding-left: 15px; gutter size offset */
+    padding-left: 15px;
   }
   .my-masonry-grid_column > div {
     margin-bottom: 15px; /* space between items */

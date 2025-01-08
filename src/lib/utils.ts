@@ -1,8 +1,8 @@
-import { clsx, ClassValue } from "clsx"
-import { twMerge } from "tailwind-merge"
+import { clsx, ClassValue } from "clsx";
+import { twMerge } from "tailwind-merge";
 
 export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs))
+  return twMerge(clsx(inputs));
 }
 
 export const truncate = (text: string, length: number): string => {
@@ -23,4 +23,8 @@ export const capitalizeAllFirstLetters = (text: string): string => {
     .split(" ")
     .map((word) => toPascalCase(word))
     .join(" ");
+};
+
+export const genRandomNum = (): number => {
+  return Math.floor(Math.abs(Math.random() * 401)) + 200;
 };

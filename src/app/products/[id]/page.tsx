@@ -1,8 +1,10 @@
-import React, { useEffect } from 'react'
 import Image from 'next/image';
 
 import { type Product } from '@/common/types/product'
 import Container from '@/components/ui/container'
+import BackButton from '../components/backButton';
+import { products } from '@/common/constants';
+import { notFound } from 'next/navigation';
 
 type ProductProps = {
     params: { id: string }
@@ -13,26 +15,15 @@ type ProductProps = {
 
 const Product = ({ params }: ProductProps) => {
     const { id } = params
-    const product = {
-        id: String(Math.random()),
-        description:
-            "Soles Craft specializes in creating high-quality, stylish, and comfortable shoes for both men and women. With a focus on timeless designs and premium materials,  Every pair of shoes we craft tells a story of dedication, artistry, and innovation. Step into a world of unparalleled comfort and style with Soles Craft—where your soles find their perfect match.",
-        images: [
-            "/IMG-20241220-WA0016.jpg",
-            "/IMG-20241220-WA0017.jpg",
-            "/IMG-20241220-WA0019.jpg",
-            "/IMG-20241220-WA0020.jpg",
-            "/IMG-20241220-WA0022.jpg",
-            "/IMG-20241220-WA0026.jpg",
-            "/IMG-20241220-WA0027.jpg",
-            "/IMG-20241220-WA0030.jpg",
-        ],
-    }
+    const product = products.find(p => p.id === id)
 
+    if (!product) return notFound()
 
     return (
-        <div className=' py-[4.5rem] lg:py-0'>
-            <Container className='flex relative h-screen justify-center items-center gap-4 flex-col lg:flex-row'>
+        <div className=' py-[2rem] flex flex-col px-5 gap-6 overflow-x-hidden'>
+            <BackButton />
+
+            <Container className='flex relative h-screen items-center gap-4 flex-col lg:flex-row lg:justify-center lg:items-start '>
                 <Container className='  w-full flex justify-center flex-wrap relative lg:w-1/3'>
                     {/* {
                         product?.images?.map((image, i) => (
@@ -46,7 +37,7 @@ const Product = ({ params }: ProductProps) => {
                         ))
                     } */}
 
-                    <Image src={product.images[2] as string}
+                    <Image src={product?.images[2] as string}
                         height={400}
                         width={300}
                         alt='hero'

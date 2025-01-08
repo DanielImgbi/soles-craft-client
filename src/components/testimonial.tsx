@@ -7,6 +7,8 @@ import Card from './card'
 
 //constant
 import { testimonies } from '@/common/constants'
+import Parallax from './paralax'
+import { truncate } from '@/lib/utils'
 
 
 
@@ -14,33 +16,35 @@ const Testimonial = () => {
 
     return (
         <section className=' text-white py-4 flex flex-col items-center ' id='testimonial'>
-            <Container className='flex items-center justify-center mt-10 mb-2'>
+            <Container className='flex items-center justify-center mb-6'>
                 <h1 className='text-[#887f7f] text-4xl'> Testimonial </h1>
             </Container>
 
-            <Container className='flex flex-col gap-5 lg:flex-row py-5'>
-                {
-                    testimonies.map(({ name, testimony, image }, i) => (
-                        <Card key={i}>
-                            <Container className='flex flex-col  gap-9 h-full w-full'>
-                                <Container className='h-[15rem] w-[100%] relative rounded-xl'>
-                                    <Image
-                                        src={image}
-                                        alt='pic'
-                                        fill
-                                        objectFit='cover'
-                                        className='static rounded-t-xl '
-                                    />
-                                </Container>
-                                <Container className='flex flex-col gap-3  px-2 py-3 h-[40%]'>
-                                    <h3 className=''>{name}</h3>
-                                    <p className=''>{testimony}</p>
-                                </Container>
+            <Parallax baseVelocity={-1}>
+                <Container className="inline-flex gap-4 flex-shrink-0">
+                    {testimonies.map(({ image, name, testimony }, i) => (
+                        <Container
+                            key={i}
+                            className="relative flex flex-col rounded-xl bg-slate-300 bg-opacity-15 h-[20rem] w-[20rem] "
+                        >
+                            <Container className="h-[60%] w-full rounded-t-xl  relative">
+                                <Image
+                                    src={image}
+                                    alt="placeholder"
+                                    className="object-contain w-full rounded-t-xl h-auto relative"
+                                    fill
+                                    objectFit='cover'
+                                    quality={100}
+                                />
                             </Container>
-                        </Card>
-                    ))
-                }
-            </Container>
+                            <Container className='flex flex-col gap-1  p-2 box-border'>
+                                <h3 className=''>{name}</h3>
+                                <p className='overflow-hidden '>{testimony}</p>
+                            </Container>
+                        </Container>
+                    ))}
+                </Container>
+            </Parallax>
         </section >
     )
 }
