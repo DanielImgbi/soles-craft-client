@@ -19,7 +19,7 @@ const Hero = () => {
     };
 
     return (
-        <div className=" w-screen relative md:bg-[url(/IMG-20241220-WA0017.jpg)] md:bg-cover md:bg-no-repeat">
+        <div className=" w-screen h-screen relative md:bg-[url(/IMG-20241220-WA0017.jpg)] md:bg-cover md:bg-no-repeat">
             <div className='w-full h-auto block lg:h-screen lg:hidden'>
                 <Masonry
                     breakpointCols={breakpointColumnsObj}
@@ -28,8 +28,8 @@ const Hero = () => {
                     {
                         heroImages.map((image, i) => (
                             <Image key={1} src={image}
-                                height={i % 2 ? 200 : 400}
-                                width={i % 2 ? 200 : 300}
+                                height={200}
+                                width={300}
                                 alt='hero'
                                 className={`rounded-lg flex-grow lg:my-2`}
                             />))
