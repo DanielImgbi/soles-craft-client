@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`bg-black text-white relative`}>
+      <body className={`bg-black text-white relative w-screen`}>
         {/* <NavBar /> */}
         {children}
         <Footer />
