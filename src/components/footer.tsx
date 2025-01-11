@@ -14,13 +14,6 @@ import { HiOutlineMail } from "react-icons/hi";
 import Container from "./ui/container";
 
 
-
-
-
-//   direction="row"
-//   alignItems={"center"}
-//   sx={{ gap: "1rem", position: "", bottom: "0px", padding: "1rem", }}
-
 const Footer = () => {
     return (
         <Container
@@ -34,7 +27,7 @@ const Footer = () => {
 
 export const FooterCard = () => {
     return (
-        <div id="contact" className="mt-16 w-[91%] sm:w-[89%] mx-auto text-[white]">
+        <div id="contact" className="mt-16 w-[91%] sm:w-[89%] mx-auto text-black">
 
             <div className="flex items-center gap-3 justify-center flex-wrap my-4">
                 <Link

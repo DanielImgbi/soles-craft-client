@@ -26,29 +26,21 @@ body::-webkit-scrollbar-thumb {
   border-radius: 20%;
 }
 
-.gradient {
-  /* @apply bg-[radial-gradient(at 40% 20%, hsla(34,90%,46%,1) 0px, transparent 50%)]; */
-}
-
 .my-masonry-grid {
-  display: -webkit-box; /* Not needed if autoprefixing */
-  display: -ms-flexbox; /* Not needed if autoprefixing */
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  /* margin: 10px; gutter size offset */
+  margin: 0;
   width: auto;
   flex-wrap: wrap;
-  gap: 3;
+  gap: 1;
 }
 .my-masonry-grid_column {
-  /* padding-left: 30px; gutter size */
   background-clip: padding-box;
 }
 
-/* Style your items */
 .my-masonry-grid_column > div {
-  /* change div to reference your elements you put in <Masonry> */
   background: grey;
-  margin-bottom: 30px;
 }
 
 .parallax {
@@ -72,11 +64,6 @@ body::-webkit-scrollbar-thumb {
 }
 
 .pinterest-grid {
-  /* display: grid; */
-  /* grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
-  column-gap: 0;
-  padding: 0; */
-
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -85,7 +72,6 @@ body::-webkit-scrollbar-thumb {
 
 .pinterest-grid-item {
   position: relative;
-  /* width: 100%; */
   border-radius: 15px;
   overflow: hidden;
   background: #f0f0f0;
@@ -95,12 +81,11 @@ body::-webkit-scrollbar-thumb {
 
 @media (max-width: 800px) {
   .my-masonry-grid {
-    margin-left: -15px; /* gutter size offset */
+    margin-left: -15px;
   }
   .my-masonry-grid_column {
-    padding-left: 15px;
   }
   .my-masonry-grid_column > div {
-    margin-bottom: 15px; /* space between items */
+    margin-bottom: 15px;
   }
 }

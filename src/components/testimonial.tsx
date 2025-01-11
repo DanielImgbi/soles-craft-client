@@ -2,30 +2,29 @@ import React from 'react'
 import Image from 'next/image'
 
 //comps
-import Container from './ui/container'
-import Card from './card'
+import Container from './ui/container';
+import Card from './card';
 
 //constant
-import { testimonies } from '@/common/constants'
-import Parallax from './paralax'
-import { truncate } from '@/lib/utils'
+import { testimonies } from '@/common/constants';
+import Parallax from './paralax';
 
 
 
 const Testimonial = () => {
 
     return (
-        <section className=' text-white py-4 flex flex-col items-center ' id='testimonial'>
+        <section className=' w-screen overflow-x-hidden text-black py-4 flex flex-col items-center ' id='testimonial'>
             <Container className='flex items-center justify-center mb-6'>
                 <h1 className='text-[#887f7f] text-4xl'> Testimonial </h1>
             </Container>
 
-            <Parallax baseVelocity={-1}>
+            <Parallax baseVelocity={1}>
                 <Container className="inline-flex gap-4 flex-shrink-0">
                     {testimonies.map(({ image, name, testimony }, i) => (
                         <Container
                             key={i}
-                            className="relative flex flex-col rounded-xl bg-slate-300 bg-opacity-15 h-[20rem] w-[20rem] "
+                            className="relative flex flex-col rounded-xl shadow-md bg-[#eceaea] h-[20rem] w-[20rem] "
                         >
                             <Container className="h-[60%] w-full rounded-t-xl  relative">
                                 <Image

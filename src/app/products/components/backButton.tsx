@@ -13,7 +13,7 @@ const BackButton = () => {
 
     return (
         <div className='p-3 rounded-full bg-yellow-600 w-12 h-12 flex justify-center items-center cursor-pointer'>
-            < FaArrowLeft onClick={handlePrevPage} />
+            < FaArrowLeft onClick={handlePrevPage} className='text-black' />
         </div>
     )
 }

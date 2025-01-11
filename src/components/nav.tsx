@@ -1,28 +1,35 @@
 'use client'
-
-import React, { useState } from 'react'
+import React, { useState, CSSProperties } from 'react'
 import Link from 'next/link'
 import { FaBars } from 'react-icons/fa'
 import { toPascalCase } from '@/lib/utils'
 import { usePathname } from 'next/navigation'
 
-const NavBar = () => {
+
+type NavProps = {
+    style?: CSSProperties
+}
+
+const NavBar = ({ style }: NavProps) => {
     const navLinks = ['home', 'products', 'administration'];
     const path = usePathname();
     const [toggleNav, setToggleNav] = useState(false)
 
     const handleNavToggle = () => {
         setToggleNav(prevState => !prevState)
-        console.log(path)
     }
 
     return (
-        <div className='flex items-center gap-2 px-3 py-3 shadow-sm shadow-gray-400 absolute top-0 left-0 z-50 w-screen'>
+        <div
+            className={`   flex items-center gap-2 px-3 
+             py-3 shadow-sm shadow-gray-400  z-50 w-screen`
+            }
+            style={style}>
             <div className='flex gap-3 items-center '>
                 <span className='p-2 border border-transparent hover:border-white block lg:hidden'>
                     <FaBars className='block lg:hidden ' onClick={handleNavToggle} />
                 </span>
-                <span className='text-2xl font-bold lg:text-4xl mr-10 lg:mx-10'>
+                <span className='text-2xl text-black font-bold lg:text-4xl mr-10 lg:mx-10'>
                     Soles<span className='font-semibold text-yellow-600'>Craft</span>
                 </span>
             </div>
@@ -30,7 +37,8 @@ const NavBar = () => {
             <ul className='gap-4 hidden lg:flex'>
                 {navLinks.map((item, i) => (<li key={item + i}>
                     <Link href={`${item === 'home' ? '/' : item}`}
-                        className={`${path === `/${item}` ? 'text-yellow-600' : ''}`}
+                        className={`${path === `/${item}` ? 'text-yellow-600' : ''} font-bold hover:text-yellow-600`}
+                        style={style}
                     >
                         {toPascalCase(item)}
                     </Link>
@@ -39,14 +47,14 @@ const NavBar = () => {
 
             {
                 toggleNav &&
-                (<aside className='h-screen w-screen absolute flex flex-col gap-5 text-[#c4c0c0]   top-0 left-0 z-40 ' >
-                    <div className='h-full w-[80%] bg-black'>
-                        <div className='flex items-center justify-between gap-2 px-3 py-4 shadow-sm shadow-gray-400'>
+                (<aside className='h-screen w-screen absolute flex flex-col gap-5 text-black   top-0 left-0 z-40 ' >
+                    <div className='h-full w-[80%] bg-[#f1f0f0]'>
+                        <div className='flex items-center justify-between gap-2 px-3 py-4 shadow-sm'>
                             <span className='text-2xl font-bold lg:text-4xl px-2'>
                                 Soles<span className='font-semibold text-yellow-600'>Craft</span>
                             </span>
 
-                            <span className='p-2 text-2xl font-semibold border border-black hover:border-white' onClick={handleNavToggle}>
+                            <span className='p-2 text-2xl  font-semibold border border-black hover:border-black' onClick={handleNavToggle}>
                                 X
                             </span>
                         </div>
@@ -55,7 +63,7 @@ const NavBar = () => {
                             {navLinks.map((item, i) => (<li key={item + i}
                             >
                                 <Link href={`${item === 'home' ? '/' : item}`}
-                                    className={`${path === `/${item}` ? 'bg-white' : ''}`}
+                                    className={`${path === `/${item}` ? 'text-yellow-600' : ''} font-bold hover:text-yellow-600`}
                                     onClick={handleNavToggle}>
                                     {toPascalCase(item)}
                                 </Link>

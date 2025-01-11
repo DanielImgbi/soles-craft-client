@@ -4,8 +4,9 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from 'next/link';
 
-import { type Product } from "@/common/types/product";
+import { type Product } from "@/common/types";
 import { genRandomNum } from "@/lib/utils";
+import Motion from "@/components/motion";
 
 type CatalogProps = {
     products: Product[]
@@ -32,30 +33,34 @@ const Catalog = ({ products: data }: CatalogProps) => {
 
 
     return (
-        <main className="w-full  grid grid-cols-2 gap-x-0 align-middle content-center  py-3 columns-sm grid-col md:grid-cols-3 lg:w-5/6">
+        <main className="w-full  grid grid-cols-2 gap-x-0 align-middle content-center  px-2 columns-sm grid-col md:grid-cols-3 lg:w-5/6">
             {
                 products.map((items, index) => (
-                    <div key={index} className="flex flex-col items-center relative  ">
-                        {
-                            items.map(({ images, id }, i) => (
-                                <Link key={i} href={`/products/${id}`}>
-                                    <div key={i} className={`pinterest-grid-item w-[10.7rem] mb-4  md:w-[17rem] lg:w-[22rem]`} style={{
-                                        height: imgHeight[index++]
-                                    }}>
-                                        <Image
-                                            src={images[i > 7 ? 4 : i]}
-                                            fill
-                                            alt='hero'
-                                            objectFit="cover"
-                                            sizes="300px"
-                                            style={{ objectFit: 'cover' }}
-                                            priority
-                                            className="w-full h-full object-cover object-center"
-                                        />
-                                    </div>
-                                </Link>
-                            ))
-                        }
+                    <div key={index} className="flex flex-col items-center relative ">
+                        <Motion>
+
+
+                            {
+                                items.map(({ images, id }, i) => (
+                                    <Link key={i} href={`/products/${id}`}>
+                                        <div key={i} className={`pinterest-grid-item w-[10.7rem] mb-4  md:w-[17rem] lg:w-[22rem]`} style={{
+                                            height: imgHeight[index++]
+                                        }}>
+                                            <Image
+                                                src={images[0]}
+                                                fill
+                                                alt='hero'
+                                                objectFit="cover"
+                                                sizes="300rem"
+                                                style={{ objectFit: 'cover' }}
+                                                priority
+                                                className="w-full h-full object-cover object-center"
+                                            />
+                                        </div>
+                                    </Link>
+                                ))
+                            }
+                        </Motion>
                     </div>
                 ))
             }

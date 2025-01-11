@@ -1,8 +1,4 @@
-import React, { ReactNode } from 'react';
-import Image from 'next/image'
-
-import { toPascalCase } from '@/lib/utils'
-import { aboutText1 } from '@/common/constants';
+import { toPascalCase } from '@/lib/utils';
 import { CgStyle } from 'react-icons/cg';
 import { MdHighQuality } from 'react-icons/md';
 import { FaCreativeCommonsSamplingPlus } from 'react-icons/fa6';
@@ -16,12 +12,12 @@ const About = () => {
 
 
     return (
-        <article className=' text-white py-4 flex flex-col items-center ' id='about'>
+        <article className=' text-black py-4 flex flex-col items-center ' id='about'>
             <Container className='py-6 px-3 flex flex-col gap-5 justify-center items-center text-center'>
                 <Container className='flex items-center justify-center mt-10 mb-5'>
-                    <h1 className='text-[#887f7f] text-2xl'> About</h1>
+                    <h1 className='text-[#887f7f] text-2xl font-bold'> About</h1>
                 </Container>
-                <p className='text-lg text-white lg:text-xl'>
+                <p className='text-lg text-black lg:text-xl'>
                     Welcome to Soles Craft, <span className='text-yellow-600'>where passion </span>
                     <span className='text-yellow-600'>meets </span> craftsmanship. Founded by a visionary <br />entrepreneur  <span className='text-yellow-600'>dedicatedmeets to redefining </span> footwear.Our brand embodies the perfect blend of <br />
                     functionality <span className='text-yellow-600'>and fashion</span>.
@@ -47,20 +43,20 @@ const About = () => {
             <Container className='flex flex-col gap-7 w-'>
                 <Container className='flex flex-col w-2/2'>
                     <Container className='flex items-center justify-center mt-8 mb-2'>
-                        <h1 className='text-[#887f7f] text-2xl'> Creativity </h1>
+                        <h1 className='text-[#887f7f] text-2xl font-bold'> Creativity </h1>
                     </Container>
                     <Container className='flex items-center justify-center my-5'>
-                        <p className='text-[white] text-lg p-3 w-full  text-center lg:w-7/12 lg:text-xl'>Lorem ipsum dolor sit, amet consectetur
+                        <p className=' textlg p-3 w-full  text-center lg:w-7/12 lg:text-xl'>Lorem ipsum dolor sit, amet consectetur
                             <br /> adipisicing elit. Eius quas, optio sit earum aliquid reprehenderit.</p>
                     </Container>
                 </Container>
 
                 <Container className=''>
                     <Container className='flex items-center justify-center mt-8 mb-2'>
-                        <h1 className='text-[#887f7f] text-2xl'> Unique </h1>
+                        <h1 className='text-[#887f7f] text-2xl font-bold'> Unique </h1>
                     </Container>
                     <Container className='flex items-center justify-center my-5'>
-                        <p className='text-[white] text-lg p-3 w-full text-center lg:w-7/12 lg:text-xl'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. <br /> Eius quas, optio sit earum aliquid reprehenderit.</p>
+                        <p className='text-black text-lg p-3 w-full text-center lg:w-7/12 lg:text-xl'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. <br /> Eius quas, optio sit earum aliquid reprehenderit.</p>
                     </Container>
                 </Container>
             </Container>
@@ -70,20 +66,20 @@ const About = () => {
                 <Card >
                     <Container className='p-9 flex flex-col items-center justify-center gap-11 h-full w-full'>
                         <CgStyle className='text-8xl text-yellow-700' />
-                        <p className='text-xl text-center '> Perfect brand for style artistry</p>
+                        <p className='text-xl text-center font-semibold'> Perfect brand for style artistry</p>
                     </Container>
                 </Card>
                 <Card >
                     <Container className='p-9 flex flex-col items-center justify-center gap-11 h-full w-full'>
                         <FaCreativeCommonsSamplingPlus className='text-8xl text-yellow-700' />
-                        <p className='text-xl text-center '> Next level creativity</p>
+                        <p className='text-xl text-center font-semibold '> Next level creativity</p>
                     </Container>
 
                 </Card>
                 <Card >
                     <Container className='p-9 flex flex-col items-center justify-center gap-11 h-full w-full'>
                         <MdHighQuality className='text-8xl text-yellow-700' />
-                        <p className='text-xl text-center '> Hight Standard and Qaulity</p>
+                        <p className='text-xl text-center font-semibold'> Hight Standard and Qaulity</p>
                     </Container>
                 </Card>
             </Container>
