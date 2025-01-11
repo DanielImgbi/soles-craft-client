@@ -37,30 +37,28 @@ const Catalog = ({ products: data }: CatalogProps) => {
             {
                 products.map((items, index) => (
                     <div key={index} className="flex flex-col items-center relative ">
-                        <Motion>
 
 
-                            {
-                                items.map(({ images, id }, i) => (
-                                    <Link key={i} href={`/products/${id}`}>
-                                        <div key={i} className={`pinterest-grid-item w-[10.7rem] mb-4  md:w-[17rem] lg:w-[22rem]`} style={{
-                                            height: imgHeight[index++]
-                                        }}>
-                                            <Image
-                                                src={images[0]}
-                                                fill
-                                                alt='hero'
-                                                objectFit="cover"
-                                                sizes="300rem"
-                                                style={{ objectFit: 'cover' }}
-                                                priority
-                                                className="w-full h-full object-cover object-center"
-                                            />
-                                        </div>
-                                    </Link>
-                                ))
-                            }
-                        </Motion>
+                        {
+                            items.map(({ images, id }, i) => (
+                                <Link key={i} href={`/products/${id}`}>
+                                    <div key={i} className={`pinterest-grid-item w-[10.7rem] mb-4  md:w-[17rem] lg:w-[22rem]`} style={{
+                                        height: imgHeight[index++]
+                                    }}>
+                                        <Image
+                                            src={images[0]}
+                                            fill
+                                            alt='hero'
+                                            objectFit="cover"
+                                            sizes="300rem"
+                                            style={{ objectFit: 'cover' }}
+                                            priority
+                                            className="w-full h-full object-cover object-center"
+                                        />
+                                    </div>
+                                </Link>
+                            ))
+                        }
                     </div>
                 ))
             }
