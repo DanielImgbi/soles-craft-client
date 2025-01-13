@@ -8,9 +8,7 @@ type MotionProps = {
     amount?: number;
     className?: string
 }
-
 const Motion = ({ children, amount, className }: MotionProps) => {
-
     const body = useRef(null);
     const isInView = useInView(body, { once: true, amount: amount ?? 0.4 });
     const animate = {

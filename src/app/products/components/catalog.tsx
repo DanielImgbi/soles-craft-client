@@ -6,7 +6,6 @@ import Link from 'next/link';
 
 import { type Product } from "@/common/types";
 import { genRandomNum } from "@/lib/utils";
-import Motion from "@/components/motion";
 
 type CatalogProps = {
     products: Product[]
@@ -37,8 +36,6 @@ const Catalog = ({ products: data }: CatalogProps) => {
             {
                 products.map((items, index) => (
                     <div key={index} className="flex flex-col items-center relative ">
-
-
                         {
                             items.map(({ images, id }, i) => (
                                 <Link key={i} href={`/products/${id}`}>
@@ -65,6 +62,5 @@ const Catalog = ({ products: data }: CatalogProps) => {
         </main>
     )
 }
-
 
 export default Catalog;
