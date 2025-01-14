@@ -10,76 +10,76 @@ type ProductProps = {
     params: { id: string }
 }
 
-export const generateMetaData = ({ params }: ProductProps): Metadata => {
+// export const generateMetaData = ({ params }: ProductProps): Metadata => {
 
-    const { id } = params
-    const product = products.find(p => p.id.toString() === id)
+//     const { id } = params
+//     const product = products.find(p => p.id.toString() === id)
 
-    if (!product) return {
-        title: "solesCraft",
-        description: "Soles Craft specializes in creating high-quality, stylish, and comfortable shoes for both men and women.",
-        openGraph: {
-            type: "website",
-            locale: "en_IE",
-            url: "https://soles-craft-client.vercel.app",
-            siteName: "SolesCraft",
-            title: "SolesCraft",
-            description: "Soles Craft specializes in creating high-quality, stylish, and comfortable shoes for both men and women.",
-            images: [
-                {
-                    url: "https://soles-craft-client.vercel.app/open-graph.png",
-                    width: 800,
-                    height: 600,
-                    alt: "Og Image Alt",
-                    type: "image/png",
-                },
-                {
-                    url: "https://soles-craft-client.vercel.app/open-graph.png",
-                    width: 900,
-                    height: 800,
-                    alt: "Og Image Alt Second",
-                    type: "image/png",
-                },
-                { url: "https://soles-craft-client.vercel.app/open-graph.png" },
-                { url: "https://soles-craft-client.vercel.app/open-graph.png" },
-            ],
-        },
-    };
+//     if (!product) return {
+//         title: "solesCraft",
+//         description: "Soles Craft specializes in creating high-quality, stylish, and comfortable shoes for both men and women.",
+//         openGraph: {
+//             type: "website",
+//             locale: "en_IE",
+//             url: "https://soles-craft-client.vercel.app",
+//             siteName: "SolesCraft",
+//             title: "SolesCraft",
+//             description: "Soles Craft specializes in creating high-quality, stylish, and comfortable shoes for both men and women.",
+//             images: [
+//                 {
+//                     url: "https://soles-craft-client.vercel.app/open-graph.png",
+//                     width: 800,
+//                     height: 600,
+//                     alt: "Og Image Alt",
+//                     type: "image/png",
+//                 },
+//                 {
+//                     url: "https://soles-craft-client.vercel.app/open-graph.png",
+//                     width: 900,
+//                     height: 800,
+//                     alt: "Og Image Alt Second",
+//                     type: "image/png",
+//                 },
+//                 { url: "https://soles-craft-client.vercel.app/open-graph.png" },
+//                 { url: "https://soles-craft-client.vercel.app/open-graph.png" },
+//             ],
+//         },
+//     };
 
-    return {
-        title: "solesCraft",
-        description: "Soles Craft specializes in creating high-quality, stylish, and comfortable shoes for both men and women.",
-        openGraph: {
-            type: "website",
-            locale: "en_IE",
-            url: `https://soles-craft-client.vercel.app/products/${product.images[0]}`,
-            siteName: "SolesCraft",
-            title: "SolesCraft",
-            description: "Soles Craft specializes in creating high-quality, stylish, and comfortable shoes for both men and women.",
-            images: [
-                {
-                    url: `https://soles-craft-client.vercel.app/products/${product.images[0]}`,
-                    width: 800,
-                    height: 600,
-                    alt: "Og Image Alt",
-                    type: "image/png",
-                },
-                {
-                    url: `https://soles-craft-client.vercel.app/products/${product.images[0]}`,
-                    width: 900,
-                    height: 800,
-                    alt: "Og Image Alt Second",
-                    type: "image/png",
-                },
-                { url: `https://soles-craft-client.vercel.app/products/${product.images[0]}` },
-                { url: `https://soles-craft-client.vercel.app/products/${product.images[0]}` },
-            ],
-        },
-        twitter: {
-            card: "summary_large_image",
-        }
-    }
-}
+//     return {
+//         title: "solesCraft",
+//         description: "Soles Craft specializes in creating high-quality, stylish, and comfortable shoes for both men and women.",
+//         openGraph: {
+//             type: "website",
+//             locale: "en_IE",
+//             url: `https://soles-craft-client.vercel.app/products/${product.images[0]}`,
+//             siteName: "SolesCraft",
+//             title: "SolesCraft",
+//             description: "Soles Craft specializes in creating high-quality, stylish, and comfortable shoes for both men and women.",
+//             images: [
+//                 {
+//                     url: `https://soles-craft-client.vercel.app/products/${product.images[0]}`,
+//                     width: 800,
+//                     height: 600,
+//                     alt: "Og Image Alt",
+//                     type: "image/png",
+//                 },
+//                 {
+//                     url: `https://soles-craft-client.vercel.app/products/${product.images[0]}`,
+//                     width: 900,
+//                     height: 800,
+//                     alt: "Og Image Alt Second",
+//                     type: "image/png",
+//                 },
+//                 { url: `https://soles-craft-client.vercel.app/products/${product.images[0]}` },
+//                 { url: `https://soles-craft-client.vercel.app/products/${product.images[0]}` },
+//             ],
+//         },
+//         twitter: {
+//             card: "summary_large_image",
+//         }
+//     }
+// }
 
 const Product = ({ params }: ProductProps) => {
     const { id } = params
