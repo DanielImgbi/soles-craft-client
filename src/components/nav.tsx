@@ -21,7 +21,7 @@ const NavBar = ({ style }: NavProps) => {
   return (
     <div
       style={style}
-      className="flex items-center gap-2 px-3 py-3 shadow-sm shadow-gray-400  z-50 w-screen"
+      className="flex items-center justify-between gap-2 bg-[#222] p-3 shadow-sm shadow-gray-400  z-50 w-screen"
     >
       <div className="flex gap-3 items-center ">
         <span className="p-2 border border-transparent hover:border-white block lg:hidden">
@@ -32,7 +32,7 @@ const NavBar = ({ style }: NavProps) => {
         </span>
       </div>
 
-      <ul className="gap-4 hidden lg:flex">
+      <ul className="px-6 space-x-10 hidden lg:flex">
         {navLinks.map((item, i) => (
           <li key={item + i}>
             <Link

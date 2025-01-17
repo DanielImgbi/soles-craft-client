@@ -1,14 +1,14 @@
-import Image from 'next/image';
+import Image from "next/image";
 
-import { type Product } from '@/common/types'
-import Container from '@/components/ui/container'
-import BackButton from '../components/backButton';
-import { products } from '@/common/constants';
-import { Metadata } from 'next/types';
+import { type Product } from "@/common/types";
+import Container from "@/components/ui/container";
+import BackButton from "../components/backButton";
+import { products } from "@/common/constants";
+import { Metadata } from "next/types";
 
 type ProductProps = {
-    params: { id: string }
-}
+  params: { id: string };
+};
 
 // export const generateMetaData = ({ params }: ProductProps): Metadata => {
 
@@ -82,20 +82,19 @@ type ProductProps = {
 // }
 
 const Product = ({ params }: ProductProps) => {
-    const { id } = params
+  const { id } = params;
 
+  const product = products.find((p) => p.id.toString() === id);
 
-    const product = products.find(p => p.id.toString() === id)
+  if (!product) return <div> Not Found {id}</div>;
 
-    if (!product) return <div> Not Found {id}</div>
+  return (
+    <div className=" py-[2rem] flex flex-col px-5 gap-6 overflow-x-hidden">
+      <BackButton />
 
-    return (
-        <div className=' py-[2rem] flex flex-col px-5 gap-6 overflow-x-hidden'>
-            <BackButton />
-
-            <Container className='flex relative h-screen items-center gap-4 flex-col lg:flex-row lg:justify-center lg:items-start '>
-                <Container className='  w-full flex justify-center flex-wrap relative lg:w-1/3'>
-                    {/* {
+      <Container className="flex relative h-screen items-center gap-4 flex-col lg:flex-row lg:justify-center lg:items-start ">
+        <Container className="  w-full flex justify-center flex-wrap relative lg:w-1/3">
+          {/* {
                         product?.images?.map((image, i) => (
                             <Image src={image}
                                 key={i}
@@ -107,22 +106,25 @@ const Product = ({ params }: ProductProps) => {
                         ))
                     } */}
 
-                    <Image src={product?.images[0]}
-                        height={400}
-                        width={300}
-                        alt='hero'
-                        className={`rounded-xl flex-grow static lg:my-2 `}
-                    />
-                </Container>
+          <Image
+            src={product?.images[0]}
+            height={400}
+            width={300}
+            alt="hero"
+            className={`rounded-xl flex-grow static lg:my-2 `}
+          />
+        </Container>
 
-                <Container className='w-full flex flex-col gap-3 justify-center items- p-4 lg:h-4/6 lg:w-1/2'>
-                    <p className='text-center'>{product?.description}</p>
+        <Container className="w-full flex flex-col gap-3 justify-center items- p-4 lg:h-4/6 lg:w-1/2">
+          <p className="text-center">{product?.description}</p>
 
-                    <button className='py-3 px-5 font-semibold bg-yellow-600 text-black rounded-xl '>Checkout</button>
-                </Container>
-            </Container>
-        </div>
-    )
-}
+          <button className="py-3 px-5 font-semibold bg-yellow-600 text-black rounded-xl ">
+            Checkout
+          </button>
+        </Container>
+      </Container>
+    </div>
+  );
+};
 
-export default Product
+export default Product;
