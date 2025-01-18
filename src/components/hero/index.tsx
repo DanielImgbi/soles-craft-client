@@ -5,7 +5,7 @@ const Hero = () => {
   return (
     <section className="w-full h-screen flex px-10 bg-[#222]">
       <aside className="flex flex-col items-center space-y-10 justify-center md:items-start md:space-y-7 md:w-1/2 md:h-full">
-        <h1 className="font-bold text-6xl md:text-8xl text-gray-300">
+        <h1 className="font-bold text-5xl md:text-8xl text-gray-300">
           Soles <span className="text-yellow-600">Craft</span>
         </h1>
 
